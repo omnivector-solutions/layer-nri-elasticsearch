@@ -1,0 +1,65 @@
+---
+options:
+  extra_packages:
+    type: string
+    default: 'nri-elasticsearch'
+  command:
+    type: string
+    default: "inventory"
+    description: "Specify collection as 'all' or 'inventory'"
+  cluster_environment:
+    type: string
+    default: "production"
+    description: "Tag to further specfify cluster"
+  config_path:
+    type: string
+    default: "/etc/elasticsearch/elasticsearch.yml"
+    description: "Absolute path to Elasticsearch config"
+  hostname:
+    type: string
+    default: "localhost"
+    description: "Hostname/IP of Elasticsearch Node"
+  local_hostname:
+    type: string
+    default: "localhost"
+    description: "Hostname/IP of Elasticsearch Node"
+  username:
+    type: string
+    default: ""
+    description: "Username to access Elasticsearch"
+  password:
+    type: string
+    default: ""
+    description: "Password to access Elasticsearch"
+  port:
+    type: int
+    default: 9200
+    description: "Elasticsearch Node port"
+  timeout:
+    type: int
+    default: 30
+    description: "API timeout"
+#  use_ssl:
+#    type: boolean
+#    default: false
+#    description: ""
+#  ca_bundle_dir:
+#    type: string
+#    default:
+#    description: ""
+#  ca_bundle_file:
+#    type: string
+#    default:
+#    description: ""
+  indices_regex:
+    type: string
+    default: ""
+    description: "Use to filter collected indicies"
+  collect_indices:
+    type: boolean
+    default: true
+    description: "Collect indicies metrics"
+  collect_primaries:
+    type: boolean
+    default: true
+    description: "Collect primaries metrics"

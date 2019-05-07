@@ -1,0 +1,51 @@
+---
+integration_name: com.newrelic.elasticsearch
+
+instances:
+  - name: elasticsearch
+    # "all" or "inventory"
+    command: {{ command }}
+    arguments:
+      # (Optional) Further specify cluster
+      # (default: "production")
+      cluster_environment: {{ cluster_environment }}
+      # Absolute path to ElasticSearch configuration file.
+      # (default "/etc/elasticsearch/elasticsearch.yml")
+      config_path: {{ config_path }}
+      # Hostname/IP of Elasticsearch node.
+      # (default "localhost")
+      hostname: {{ hostname }}
+      # (Optional) Hostname/IP of Elasticsearch Node
+      # Only set to not collect inventory data against localhost
+      # (default "localhost")
+      local_hostname: {{ localhostname }}
+      # Username for accessing Elasticsearch Node
+      username: {{ username }}
+      # Password for the given user.
+      password: {{ password }}
+      # Port on which Elasticsearch Node is listening.
+      # (default 9200)
+      port: {{ port }}
+      # Timeout in seconds for an API call
+      # (default 30)
+      timeout: {{ timeout }}
+      # (Optional) true/false to use SSL.
+      # If true Certificate bundle must be supplied. (default false)
+      #use_ssl: {{ use_ssl }}
+      # (Optional) Required if use_ssl is true.
+      # Directory for certificate authority bundle
+      #ca_bundle_dir: {{ ca_bundle_dir }}
+      # (Optional) Required if use_ssl is true.
+      # File for certificate authority bundle
+      #ca_bundle_file: {{ ca_bundle_file }}
+      # (Optional) Can be used to filter which indicies are collected.
+      # If left blank it will be ignored
+      indices_regex: {{ indices_regex }}
+      # (Optional) true/false to collect indices metrics.
+      # If true collect indices, else do not. (default true)
+      collect_indices: {{ collect_indices }}
+      # (Optional) true/false to collect primaries metrics.
+      # If true collect primaries, else do not. (default true)
+      collect_primaries: {{ collect_primaries }}
+    labels:
+      role: elasticsearch

@@ -1,0 +1,17 @@
+---
+name: nri-elasticsearch
+summary: New Relic Infrastructure Integration for Elasticsearch
+maintainer: rr_pdl <ryan.redman@peopledatalabs.com>
+description: |
+  nri-elasticsearch subordinate charm
+tags:
+  - misc
+  - analytics
+  - ops
+  - monitoring
+  - performance
+subordinate: true
+requires:
+  general-info:
+    interface: juju-info
+    scope: container
